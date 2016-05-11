@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista Produtos</title>
+</head>
+<body>
+	<h1>Lista de Produtos</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>nome</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%for(var i=0; i<lista.length; i++) {%>
+			<tr>
+				<td><%=lista[i].id;%></td>
+				<td><%=lista[i].nome;%></td>
+			</tr>
+			<%}%>
+		</tbody>
+	</table>
+</body>
+</html>

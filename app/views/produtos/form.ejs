@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Form</title>
+</head>
+<body>
+	<div class="errors">
+		<% if (errosValidacao) { %>
+			<ul>
+				<% for(var i=0; i<errosValidacao.length; i++) { %>
+					<li><%=errosValidacao[i].param;%> - <%=errosValidacao[i].msg;%></li>
+				<% } %>
+			</ul>
+		<% } %>
+	</div>
+	<form action="/produtos" method="post">
+		<div>
+			<label for="nome">Produto:</label>
+			<input type="text" name="nome" id="nome" value="<%=produtos.nome%>" placeholder="Nome do produto">
+		</div>
+		<div>
+			<button type="submit">Salvar</button>
+		</div>
+	</form>
+</body>
+</html>
