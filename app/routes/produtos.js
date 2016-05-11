@@ -1,4 +1,4 @@
-module.exports = function(app) {
+module.exports = function(app) { 
 	
 	var listaProdutos = function(req, res) {
 		var connection = app.infra.connectionFactory();
