@@ -1,15 +1,21 @@
 var express = require('../config/express')();
 var request = require('supertest')(express);
 
+var DatabaseCleaner = require('database-cleaner');
+var database_cleaner = new DatabaseCleaner('mysql');
+
+
 describe('#ProdutosController', function(){
 
 	beforeEach(function(done){
-		var conn = express.infra.connectionFactory();
+		database_cleaner.clean(express.infra.connectionFactory(), done);
+		/*
+		var conn = ;
 		conn.query('delete from produtos', function(ex, result){
 			if (!ex) {
 				done();
 			}
-		});
+		});*/
 	});
 
 	it('#listagem json',function(done){
